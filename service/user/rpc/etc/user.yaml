@@ -1,0 +1,17 @@
+Name: user.rpc
+ListenOn: 0.0.0.0:9000
+Etcd:
+  Hosts:
+  - etcd-zhoutao:2379
+  Key: user.rpc
+
+Mysql:
+  DataSource: root:123456@tcp(mysql:3306)/gozero?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+
+Cache:
+  - Host: redis-zhoutao:6379
+    Type: node
+    Pass: "123456"
+
+# 用户密码加密盐
+Salt: HWVOFkGgPTryzICwd7qnJaZR9KQ2i8xe
