@@ -1,17 +1,14 @@
-Name: user.rpc
-ListenOn: 0.0.0.0:9000
+Name: product.rpc
+ListenOn: 0.0.0.0:9001
 Etcd:
   Hosts:
   - 127.0.0.1:2379
-  Key: user.rpc
+  Key: product.rpc
 
 Mysql:
   DataSource: root:123456@tcp(127.0.0.1:3306)/gozero?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
 
 Cache:
   - Host: 127.0.0.1:6379
-    Type: node
+    Type: node # node可以不写，可以设为cluster
     Pass: "123456"
-
-# 用户密码加密盐
-Salt: HWVOFkGgPTryzICwd7qnJaZR9KQ2i8xe
