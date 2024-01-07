@@ -4,7 +4,7 @@ package handler
 import (
 	"net/http"
 
-	"go-zero-study/service/product/api/internal/svc"
+	"go-zero-study/service/order/api/internal/svc"
 
 	"github.com/zeromicro/go-zero/rest"
 )
@@ -14,23 +14,28 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 		[]rest.Route{
 			{
 				Method:  http.MethodPost,
-				Path:    "/api/products/create",
+				Path:    "/api/orders/create",
 				Handler: CreateHandler(serverCtx),
 			},
 			{
 				Method:  http.MethodPost,
-				Path:    "/api/products/update",
+				Path:    "/api/orders/update",
 				Handler: UpdateHandler(serverCtx),
 			},
 			{
 				Method:  http.MethodDelete,
-				Path:    "/api/products/:id",
+				Path:    "/api/orders/:id",
 				Handler: RemoveHandler(serverCtx),
 			},
 			{
 				Method:  http.MethodGet,
-				Path:    "/api/products/:id",
+				Path:    "/api/orders/:id",
 				Handler: DetailHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodGet,
+				Path:    "/api/orders",
+				Handler: ListHandler(serverCtx),
 			},
 		},
 		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),

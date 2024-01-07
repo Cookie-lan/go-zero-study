@@ -30,15 +30,16 @@ type (
 		Gender int64  `json:"gender"`
 		Mobile string `json:"mobile"`
 	}
+
 // 用户信息
 )
 
 service User {
 	@handler Login
-	post /api/user/login (LoginRequest) returns (LoginResponse)
+	post /api/users/login (LoginRequest) returns (LoginResponse)
 
 	@handler Register
-	post /api/user/register (RegisterRequest) returns (RegisterResponse)
+	post /api/users/register (RegisterRequest) returns (RegisterResponse)
 }
 
 @server (
@@ -46,6 +47,5 @@ service User {
 )
 service User {
 	@handler UserInfo
-	get /api/user/userinfo returns (UserInfoResponse)
+	get /api/users/userinfo returns (UserInfoResponse)
 }
-

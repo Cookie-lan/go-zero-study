@@ -54,14 +54,14 @@ type (
 
 service Product {
 	@handler Create
-	post /api/product/create(CreateRequest) returns (CreateResponse)
+	post /api/products/create(CreateRequest) returns (CreateResponse)
 
 	@handler Update
-	post /api/product/update(UpdateRequest) returns (UpdateResponse)
+	post /api/products/update(UpdateRequest) returns (UpdateResponse)
 
 	@handler Remove
-	delete /api/product/:id(RemoveRequest) returns (RemoveResponse)
+	delete /api/products/:id(RemoveRequest) returns (RemoveResponse)
 
 	@handler Detail
-	get /api/product/:id(DetailRequest) returns (DetailResponse)
+	get /api/products/:id(DetailRequest) returns (DetailResponse)
 }
