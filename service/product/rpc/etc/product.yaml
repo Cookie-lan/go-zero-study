@@ -12,3 +12,14 @@ Cache:
   - Host: 127.0.0.1:6379
     Type: node # node可以不写，可以设为cluster
     Pass: "123456"
+
+Prometheus:
+  Host: 0.0.0.0
+  Port: 9091
+  Path: /metrics
+
+Telemetry:
+  Name: product.rpc
+  Endpoint: http://127.0.0.1:14268/api/traces
+  Sampler: 1.0
+  Batcher: jaeger

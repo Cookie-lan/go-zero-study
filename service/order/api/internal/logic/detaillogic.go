@@ -2,10 +2,10 @@ package logic
 
 import (
 	"context"
-	"go-zero-study/service/order/rpc/orderclient"
 
 	"go-zero-study/service/order/api/internal/svc"
 	"go-zero-study/service/order/api/internal/types"
+	"go-zero-study/service/order/rpc/orderclient"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

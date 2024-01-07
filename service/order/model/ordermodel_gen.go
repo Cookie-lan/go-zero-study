@@ -32,6 +32,9 @@ type (
 		Update(ctx context.Context, data *Order) error
 		Delete(ctx context.Context, id int64) error
 		FindAllByUID(ctx context.Context, uid int64) ([]*Order, error)
+		TxInsert(ctx context.Context, tx *sql.Tx, data *Order) (sql.Result, error)
+		TxUpdate(ctx context.Context, tx *sql.Tx, data *Order) error
+		FindOneByUid(ctx context.Context, uid int64) (*Order, error)
 	}
 
 	defaultOrderModel struct {

@@ -8,6 +8,7 @@ import (
 	"go-zero-study/service/order/api/internal/handler"
 	"go-zero-study/service/order/api/internal/svc"
 
+	_ "github.com/dtm-labs/dtmdriver-gozero"
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/rest"
 )

@@ -11,5 +11,7 @@ type Config struct {
 		AccessSecret string
 		AccessExpire int64
 	}
-	OrderRpc zrpc.RpcClientConf
+	OrderRpc   zrpc.RpcClientConf
+	ProductRpc zrpc.RpcClientConf
+	DtmServer  string
 }
